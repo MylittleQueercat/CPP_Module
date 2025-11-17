@@ -17,22 +17,24 @@ int	main(int argc, char **argv) {
 		}
 	}
 
-	Harl	Harl;
+	Harl	harl;
 	switch (index) {
 		case 0:
-			Harl.complain("DEBUG");
+			harl.complain("DEBUG");
 			std::cout << std::endl;
 		case 1:
-			Harl.complain("INFO");
+			harl.complain("INFO");
 			std::cout << std::endl;
 		case 2:  
-			Harl.complain("WARNING");
+			harl.complain("WARNING");
 			std::cout << std::endl;
 		case 3:
-			Harl.complain("ERROR");
+			harl.complain("ERROR");
 			std::cout << std::endl;
+			break ;
 		default:  
-			return (0);
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break ;
 	}
 
 	return (0);

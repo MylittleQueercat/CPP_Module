@@ -13,6 +13,8 @@ std::string	replaceAll(const std::string &line, const std::string &s1, const std
 		pos = found + s1.length();
 	}
 	result.append(line, pos, line.length() - pos);
+	// 因为最后一次 find 循环之后， pos 停在最后一个被替换过的位置后面
+	// 但后面可能还有字符串没复制
 	return (result);
 }
 
@@ -46,7 +48,9 @@ int	main(int argc, char **argv) {
 	std::string line;
 	while (std::getline(input, line)) {
 		std::string replaced = replaceAll(line, s1, s2);
-		output << replaced << std::endl;
+		output << replaced;
+		if (!input.eof())
+			output << std::endl;
 	}
 
 	return (0);
