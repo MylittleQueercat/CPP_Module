@@ -14,6 +14,8 @@ private:
 	std::string darkest_secret;
 
 	std::string truncate(const std::string &str) const;
+	std::string get_non_empty_input(const std::string &prompt);
+	std::string get_valid_phone_number(const std::string &prompt);
 
 public:
 	void set_contact();

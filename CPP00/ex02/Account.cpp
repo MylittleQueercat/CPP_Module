@@ -106,7 +106,7 @@ bool	Account::makeWithdrawal(int withdrawal) {
 	
 	//判断余额是否足够
 	if (withdrawal > this->_amount) {
-		std::cout << ";withdrawal:refuses" << std::endl;
+		std::cout << ";withdrawal:refused" << std::endl;
 		return (false);
 	}
 
