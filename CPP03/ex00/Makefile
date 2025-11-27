@@ -1,6 +1,6 @@
-NAME = Fixed
+NAME = ClapTrap
 
-SRCS = Fixed.cpp main.cpp
+SRCS = ClapTrap.cpp main.cpp
 OBJ = $(SRCS:.cpp=.o)
 
 CXX = c++
