@@ -5,6 +5,6 @@ Zombie*	newZombie(std::string name) {
 	return (zombie);
 }
 
-//new是堆上的关键字，可用于申请内存，构造一个叫name的ZOmbie
+//new是堆heap上的关键字，可用于申请内存，构造一个叫name的Zombie
 //再返回它的地址
 //delet也是关键字，用于释放内存

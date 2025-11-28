@@ -21,3 +21,4 @@ void	randomChump(std::string name);
 #endif
 
 // ~Zombie()是析构函数，当对象生命周期结束或你 delete它时会自动调用
+// Zombie(std::string name); 在初始化时必须给名字
