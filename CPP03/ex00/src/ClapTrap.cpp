@@ -9,7 +9,7 @@ ClapTrap::ClapTrap()
 }
 
 // 带名字构造
-ClapTrap::ClapTrap(const std::string name) 
+ClapTrap::ClapTrap(const std::string name)
     : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
     std::cout << "ClapTrap name constructor called for "
@@ -34,7 +34,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
         this->_energyPoints = other._energyPoints;
         this->_attackDamage = other._attackDamage;
     }
-    return *this;
+    return (*this);
 }
 
 // 析构
@@ -52,14 +52,14 @@ void ClapTrap::attack(const std::string &target)
         std::cout << "ClapTrap " << _name
                   << " cannot attack because it has no hit points left!"
                   << std::endl;
-        return;
+        return ;
     }
     if (_energyPoints == 0)
     {
         std::cout << "ClapTrap " << _name
                   << " cannot attack because it has no energy points left!"
                   << std::endl;
-        return;
+        return ;
     }
     _energyPoints--;
     std::cout << "ClapTrap " << _name
@@ -75,7 +75,7 @@ void ClapTrap::takeDamage(unsigned int amount)
     {
         std::cout << "ClapTrap " << _name
                   << " is already out of hit points!" << std::endl;
-        return;
+        return ;
     }
 
     if (amount >= _hitPoints)
@@ -96,14 +96,14 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << _name
                   << " cannot be repaired because it has no hit points left!"
                   << std::endl;
-        return;
+        return ;
     }
     if (_energyPoints == 0)
     {
         std::cout << "ClapTrap " << _name
                   << " cannot be repaired because it has no energy points left!"
                   << std::endl;
-        return;
+        return ;
     }
     _energyPoints--;
     _hitPoints += amount;

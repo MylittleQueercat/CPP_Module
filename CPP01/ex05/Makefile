@@ -4,20 +4,31 @@ SRC = Harl.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
-RM = rm -f 
+CXXFLAGS = -Wall -Werror -Wextra  -std=c++98
+RM = rm -f
 
-all : $(NAME)
+BOLD = \033[1m
+GREEN = \033[32m
+CYAN = \033[36m
+RESET = \033[0m
 
-$(NAME) : $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	@echo " "
+	@echo "$(BOLD)$(GREEN)✔  Build completed!$(RESET)$(CYAN)"
+	@echo " "
+
+%.o: %.cpp
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: re clean fclean all
+.PHONY: all clean fclean re

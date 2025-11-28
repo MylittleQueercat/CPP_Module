@@ -1,6 +1,6 @@
-NAME = brainz
+NAME = FragTrap
 
-SRC = main.cpp Zombie.cpp zombieHorde.cpp
+SRC = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CXX = c++
