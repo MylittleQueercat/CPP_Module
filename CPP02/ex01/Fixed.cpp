@@ -20,6 +20,7 @@ Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
+// 整数 -> 定点数
 Fixed::Fixed(const int num) {
 	std::cout << "Int constructor called" << std::endl;
 	_value = num << _fractionalBits;
@@ -47,7 +48,8 @@ int	Fixed::toInt(void) const {
 	return (_value) >> (_fractionalBits);
 }
 
+// 运算符重载，让 Fixed 可以像 int / float 一样被 std::cout << 输出
 std::ostream& operator<<(std::ostream& out, const Fixed& obj) {
-	out << obj.toFloat();
+	out << obj.toFloat(); // 保证精度
 	return (out);
 }

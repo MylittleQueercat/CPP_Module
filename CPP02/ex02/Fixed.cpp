@@ -4,9 +4,7 @@ Fixed::Fixed() : _value(0) {
 	return ;
 }
 
-Fixed::Fixed(const Fixed& other) {
-	this->_value = other._value;
-}
+Fixed::Fixed(const Fixed& other) : _value(other._value) {}
 
 Fixed& Fixed::operator=(const Fixed& other) {
 	if (this != &other)
@@ -91,25 +89,25 @@ Fixed	Fixed::operator/(const Fixed& other) const {
 
 // Increment / Decrement operators
 Fixed&	Fixed::operator++() {
-	this->_value++;
-	return (*this);
-}
-
-Fixed&	Fixed::operator--() {
-	this->_value--;
+	++this->_value;
 	return (*this);
 }
 
 Fixed	Fixed::operator++(int) {
-	Fixed temp = *this;
-	this->_value++;
-	return (temp);
+	Fixed tmp(*this);
+	++this->_value;
+	return (tmp);
+}
+
+Fixed&	Fixed::operator--() {
+	--this->_value;
+	return (*this);
 }
 
 Fixed	Fixed::operator--(int) {
-	Fixed temp = *this;
-	this->_value--;
-	return (temp);
+	Fixed tmp(*this);
+	--this->_value;
+	return (tmp);
 }
 
 // Static min/max

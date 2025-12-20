@@ -39,10 +39,10 @@ public:
 	Fixed operator/(const Fixed& other) const;
 
 	// Increment / Decrement operators
-	Fixed& operator++();       // pre-increment (++a)
-	Fixed operator++(int);     // post-increment (a++)
-	Fixed& operator--();       // pre-decrement (--a)
-	Fixed operator--(int);     // post-decrement (a--)
+	Fixed& operator++();       // 前置自增 (++a)
+	Fixed operator++(int);     // 后置自增 (a++)
+	Fixed& operator--();       // 前置自减 (--a)
+	Fixed operator--(int);     // 后置自减 (a--)
 
 	// Static min/max
 	static Fixed& min(Fixed& a, Fixed& b);
