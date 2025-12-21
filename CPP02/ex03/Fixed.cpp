@@ -101,15 +101,15 @@ Fixed&	Fixed::operator--() {
 }
 
 Fixed	Fixed::operator++(int) {
-	Fixed temp = *this;
+	Fixed tmp = *this;
 	this->_value++;
-	return (temp);
+	return (tmp);
 }
 
 Fixed	Fixed::operator--(int) {
-	Fixed temp = *this;
+	Fixed tmp = *this;
 	this->_value--;
-	return (temp);
+	return (tmp);
 }
 
 // Static min/max
