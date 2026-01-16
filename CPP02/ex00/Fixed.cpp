@@ -8,7 +8,7 @@ Fixed::Fixed() : _value(0) {
 //拷贝构造
 Fixed::Fixed(const Fixed& other) {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_value = other._value;
+	*this = other;
 }
 
 //赋值
@@ -21,7 +21,7 @@ Fixed& Fixed::operator=(const Fixed& other) {
 
 //析构
 Fixed::~Fixed() {
-	std::cout << "Destruction called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 int	Fixed::getRawBits(void) const {
@@ -30,5 +30,6 @@ int	Fixed::getRawBits(void) const {
 }
 
 void	Fixed::setRawBits(int const raw) {
+	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 }
