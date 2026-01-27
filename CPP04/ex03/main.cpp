@@ -5,14 +5,19 @@
 
 int main() {
     IMateriaSource* src = new MateriaSource();
-    src->learnMateria(new Ice());
-    src->learnMateria(new Cure());
+
+    AMateria* m1 = new Ice();
+    AMateria* m2 = new Cure();
+    src->learnMateria(m1);
+    src->learnMateria(m2);
+    delete m1;
+    delete m2;
 
     ICharacter* me = new Character("me");
 
-    AMateria* tmp;
-    tmp = src->createMateria("ice");
+    AMateria* tmp = src->createMateria("ice");
     me->equip(tmp);
+
     tmp = src->createMateria("cure");
     me->equip(tmp);
 
@@ -21,9 +26,7 @@ int main() {
     me->use(0, *bob);
     me->use(1, *bob);
 
-    delete (bob);
-    delete (me);
-    delete (src);
-
-    return (0);
+    delete bob;
+    delete me;
+    delete src;
 }

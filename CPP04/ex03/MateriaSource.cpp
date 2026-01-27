@@ -49,11 +49,9 @@ void	MateriaSource::learnMateria(AMateria* m) {
 		if (_templates[i] == 0)
 		{
 			_templates[i] = m->clone();
-			delete (m);
 			return ;
 		}
 	}
-	delete (m);
 }
 
 AMateria* MateriaSource::createMateria(std::string const& type) {

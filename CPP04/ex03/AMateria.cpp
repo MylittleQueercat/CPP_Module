@@ -6,14 +6,13 @@ AMateria::AMateria(std::string const& type) : _type(type) {}
 AMateria::AMateria(AMateria const& other) : _type(other._type) {}
 
 AMateria& AMateria::operator=(AMateria const& other) {
-	if (this != &other)
-		_type = other._type;
+	(void)other;
 	return (*this);
 }
 
-AMateria::~AMateria(void) {}
+AMateria::~AMateria() {}
 
-std::string const& AMateria::getType(void) const {
+std::string const& AMateria::getType() const {
 	return (_type);
 }
 

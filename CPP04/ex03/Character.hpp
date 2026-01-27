@@ -13,7 +13,7 @@ class Character : public ICharacter {
 		AMateria*	_inv[4];
 		std::vector<AMateria*> _floor;
 
-		void	clarAll();
+		void	clearAll();
 
 	public:  
 		Character(std::string const& name);
@@ -22,7 +22,6 @@ class Character : public ICharacter {
 		virtual ~Character();
 
 		virtual std::string const& getName() const;
-
 		virtual void equip(AMateria* m);
 		virtual void unequip(int idx);
 		virtual void use(int idx, ICharacter& target);

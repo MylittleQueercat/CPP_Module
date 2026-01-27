@@ -6,7 +6,7 @@ Character::Character(std::string const& name) : _name(name) {
 		_inv[i] = 0;
 }
 
-void	Character::clarAll() {
+void	Character::clearAll() {
 	for (int i = 0; i < 4; i++)
 	{
 		delete (_inv[i]);
@@ -26,18 +26,12 @@ Character::Character(Character const& other) : _name(other._name) {
 		if (other._inv[i])
 			_inv[i] = other._inv[i]->clone();
 	}
-
-	for (size_t i = 0; i < other._floor.size(); i++)
-	{
-		if (other._floor[i])
-			_floor.push_back(other._floor[i]->clone());
-	}
 }
 
 Character& Character::operator=(Character const& other) {
 	if (this != &other) 
 	{
-		clarAll();
+		clearAll();
 		_name = other._name;
 
 		for (int i = 0; i < 4; i++)
@@ -45,18 +39,12 @@ Character& Character::operator=(Character const& other) {
 			if (other._inv[i])
 				_inv[i] = other._inv[i]->clone();
 		}
-
-		for (size_t i = 0; i < other._floor.size(); i++)
-		{
-			if (other._floor[i])
-				_floor.push_back(other._floor[i]->clone());
-		}
 	}
 	return (*this);
 }
 
 Character::~Character() {
-	clarAll();
+	clearAll();
 }
 
 std::string const& Character::getName() const {
@@ -75,6 +63,7 @@ void	Character::equip(AMateria* m) {
 			return ;
 		}
 	}
+	_floor.push_back(m);
 }
 
 void	Character::unequip(int idx) {

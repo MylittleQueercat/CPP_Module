@@ -1,6 +1,6 @@
 #include "Animal.hpp"
 
-Animal::Animal(void) : type("Animal") {
+Animal::Animal() : type("Animal") {
 	std::cout << "[Animal] default constructor\n";
 }
 
@@ -15,14 +15,14 @@ Animal& Animal::operator=(const Animal& other) {
 	return (*this);
 }
 
-Animal::~Animal(void) {
+Animal::~Animal() {
 	std::cout << "[Animal] destructor\n";
 }
 
-std::string Animal::getType(void) const {
+std::string Animal::getType() const {
 	return (this->type);
 }
 
-void	Animal::makeSound(void) const {
+void	Animal::makeSound() const {
 	std::cout << "Animal: *generic animal noises*\n";
 }

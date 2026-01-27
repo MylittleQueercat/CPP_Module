@@ -9,13 +9,13 @@ class WrongAnimal {
 		std::string type;
 
 	public:
-		WrongAnimal(void);
+		WrongAnimal();
 		WrongAnimal(const WrongAnimal& other);
 		WrongAnimal& operator=(const WrongAnimal& other);
-		~WrongAnimal(void);
+		~WrongAnimal();
 
-		std::string getType(void) const;
-		void makeSound(void) const;
+		std::string getType() const;
+		void makeSound() const;
 };
 
 #endif

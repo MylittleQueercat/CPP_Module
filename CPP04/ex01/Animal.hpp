@@ -9,13 +9,13 @@ class Animal {
 		std::string type;
 
 	public:
-		Animal(void);
+		Animal();
 		Animal(const Animal& other);
 		Animal& operator=(const Animal& other);
-		virtual ~Animal(void);
+		virtual ~Animal();
 
-		std::string getType(void) const;
-		virtual void makeSound(void) const;
+		std::string getType() const;
+		virtual void makeSound() const;
 };
 
 # endif

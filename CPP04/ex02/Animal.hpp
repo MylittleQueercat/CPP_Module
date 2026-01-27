@@ -9,17 +9,13 @@ class Animal {
 		std::string type;
 
 	public:
-		Animal(void);
+		Animal();
 		Animal(const Animal& other);
 		Animal& operator=(const Animal& other);
-		virtual ~Animal(void);
+		virtual ~Animal();
 
-		std::string getType(void) const;
-		virtual void makeSound(void) const = 0;
+		std::string getType() const;
+		virtual void makeSound() const = 0;
 };
 
 # endif
-
-// virtual void makeSound(void) const = 0
-// 规定Animal只能当规则，不能创建实体，是抽象的概念
-// 禁止 Ainimal a 和 new Animal()
