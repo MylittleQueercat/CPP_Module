@@ -1,24 +1,33 @@
 NAME = bureaucrat
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+SRC = main.cpp Bureaucrat.cpp
+OBJ = $(SRC:.cpp=.o)
 
-SRCS = main.cpp Bureaucrat.cpp
-OBJS = $(SRCS:.cpp=.o)
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+RM = rm -f
+
+BOLD = \033[1m
+CYAN = \033[36m
+GREEN = \033[32m
+RESET = \033[0m
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJ)
+	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	@echo " "
+	@echo "$(BOLD)$(GREEN)✔  Build completed $(RESET)"
+	@echo " "
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
