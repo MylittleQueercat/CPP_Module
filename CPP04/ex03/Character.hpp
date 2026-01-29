@@ -3,7 +3,6 @@
 
 # include "ICharacter.hpp"
 # include <string>
-# include <vector>
 
 class AMateria;
 
@@ -11,9 +10,15 @@ class Character : public ICharacter {
 	private:  
 		std::string _name;
 		AMateria*	_inv[4];
-		std::vector<AMateria*> _floor;
+		
+		struct s_list {
+			AMateria* 		content;
+			struct s_list*	next;
+		};
+		s_list*		floor;
 
 		void	clearAll();
+		void	unequip_to_floor(AMateria* m);
 
 	public:  
 		Character(std::string const& name);
