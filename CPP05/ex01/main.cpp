@@ -4,7 +4,7 @@
 
 int main()
 {
-	// 1) 正常：grade 足够
+	// 1
 	{
 		Bureaucrat a("Alice", 10);
 		Form f("TaxForm", 20, 30);
@@ -16,7 +16,7 @@ int main()
 
 	std::cout << "-----------------\n";
 
-	// 2) 失败：grade 不够
+	// 2
 	{
 		Bureaucrat b("Bob", 50);
 		Form f("SecretForm", 20, 30);
@@ -25,7 +25,7 @@ int main()
 
 	std::cout << "-----------------\n";
 
-	// 3) Form 构造越界
+	// 3
 	try
 	{
 		Form bad("BadForm", 0, 151);

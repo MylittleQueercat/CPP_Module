@@ -11,9 +11,10 @@ void	Bureaucrat::checkGrade (int grade)
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {}
 
-Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name)
 {
-	Bureaucrat::checkGrade(_grade);
+	checkGrade(grade);
+	this->_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(other._grade) {}
@@ -21,7 +22,10 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(oth
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
 	if (this != &other)
+	{
+		checkGrade(other._grade);
 		_grade = other._grade;
+	}
 	return (*this);
 }
 
@@ -39,13 +43,13 @@ int	Bureaucrat::getGrade() const
 
 void	Bureaucrat::incrementGrade()
 {
-	Bureaucrat::checkGrade(_grade - 1);
+	checkGrade(_grade - 1);
 	_grade--;
 }
 
 void	Bureaucrat::decrementGrade()
 {
-	Bureaucrat::checkGrade(_grade + 1);
+	checkGrade(_grade + 1);
 	_grade++;
 }
 
@@ -68,7 +72,7 @@ void	Bureaucrat::signForm(Form& f)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->getName() << " couldn't sign " << f.getName()
+		std::cout << this->getName() << " couldn't sign " << f.getName()
 				<< " because " << e.what() << "." << std::endl;
 	}
 	

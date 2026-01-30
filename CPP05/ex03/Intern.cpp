@@ -31,6 +31,7 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& target) 
 		{ "robotomy request",    &Intern::createRobotomy    },
 		{ "presidential pardon", &Intern::createPresidential}
 	};
+	// si on veut ajouter des nouveaux forms, ca march et c'est facile
 
 	for (size_t i = 0; i < (sizeof(table) / sizeof(table[0])); ++i)
 	{

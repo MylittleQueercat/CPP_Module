@@ -14,7 +14,7 @@ class	Intern
 		Intern& operator=(const Intern& other);
 		~Intern();
 
-		AForm* makeForm(const std::string& forName, const std::string& target) const;
+		AForm* makeForm(const std::string& formName, const std::string& target) const;
 
 	private:  
 		typedef	AForm* (*t_create)(const std::string&);
@@ -24,6 +24,7 @@ class	Intern
 			const char*	name;
 			t_create	create;
 		};
+		// tableau de pointeurs
 		
 		static AForm* createShrubbery(const std::string& target);
 		static AForm* createRobotomy(const std::string& target);

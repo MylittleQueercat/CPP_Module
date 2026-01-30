@@ -34,8 +34,8 @@ int main()
 		Bureaucrat executorLow("ExecutorLow", 150);
 		PresidentialPardonForm p("Ford");
 
-		signer.signForm(p);      // sign requires 25 (1 ok)
-		executorLow.executeForm(p); // exec requires 5 (150 fail)
+		signer.signForm(p);
+		executorLow.executeForm(p);
 	}
 
 	std::cout << "\n=== Robotomy multiple runs ===" << std::endl;

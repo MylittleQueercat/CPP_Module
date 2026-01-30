@@ -23,3 +23,6 @@ void	PresidentialPardonForm::executeAction () const
 {
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
+
+// Zaphod Beeblebrox est le Président de la Galaxie dans
+// la série culte Le Guide du voyageur galactique

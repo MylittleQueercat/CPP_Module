@@ -35,13 +35,13 @@ int	main(int argc, char **argv) {
 
 	std::ifstream input(filename.c_str());
 	if (!input) {
-		std::cerr << "Error: cannot open input file" << std::endl;
+		std::cout << "Error: cannot open input file" << std::endl;
 		return (1);
 	}
 
 	std::ofstream output((filename + ".replace").c_str());
 	if (!output) {
-		std::cerr << "Error: cannot create output file" << std::endl;
+		std::cout << "Error: cannot create output file" << std::endl;
 		return (1);
 	}
 

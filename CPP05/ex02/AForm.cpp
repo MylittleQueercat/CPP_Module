@@ -84,9 +84,9 @@ const char*	AForm::FormNotSignedException::what() const throw()
 
 std::ostream&	operator<<(std::ostream& os, const AForm& f)
 {
-	os << "Form \"" << f.getName() << "\" "
-		<< "[signed=]" << (f.isSigned() ? "true" : "false") << "] "
-		<< "gradeToSign=" << f.getGradeToSign() << " "
-		<< "gradeToExecute=" << f.getGradeToExecute();
+	os << "Form: " << f.getName()
+		<< ", signed:" << (f.isSigned() ? "true" : "false")
+		<< ", gradeToSign:" << f.getGradeToSign()
+		<< ", gradeToExecute:" << f.getGradeToExecute();
 	return (os);
 }
