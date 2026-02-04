@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/leticiabi/Desktop/42Commoncore/CPP_Module/CPP06/ex00",
+      "program": "/Users/leticiabi/Desktop/42Commoncore/CPP_Module/CPP06/ex00/build/Debug/outDebug"
+    }
+  ]
+}

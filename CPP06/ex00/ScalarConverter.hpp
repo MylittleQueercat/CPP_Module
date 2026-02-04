@@ -7,6 +7,7 @@
 # include <cstdlib>
 # include <cerrno>
 # include <limits>
+# include <climits>
 # include <cctype>
 # include <cmath>
 
