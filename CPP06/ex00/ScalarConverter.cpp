@@ -171,13 +171,7 @@ void ScalarConverter::convert(const std::string &literal) {
 
     // pseudo-literals
     if (isPseudo(literal)) {
-        if (!parsePseudo(literal, value)) {
-            std::cout << "char: impossible\n";
-            std::cout << "int: impossible\n";
-            std::cout << "float: impossible\n";
-            std::cout << "double: impossible\n";
-            return;
-        }
+        parsePseudo(literal, value);
         printChar(value);
         printInt(value);
         printFloat(value);
