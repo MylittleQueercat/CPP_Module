@@ -1,4 +1,4 @@
-NAME = ex00
+NAME = convert
 
 SRC = main.cpp ScalarConverter.cpp
 OBJ = $(SRC:.cpp=.o)

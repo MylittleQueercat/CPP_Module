@@ -8,6 +8,24 @@ static bool isPseudo(const std::string &s) {
             s == "+inf" || s == "+inff" || s == "-inff");
 }
 
+static bool parsePseudo(const std::string &s, double &out) {
+    if (s == "nan" || s == "nanf") {
+        out = std::numeric_limits<double>::quiet_NaN();
+        return true;
+    }
+
+    if (s == "+inf" || s == "+inff") {
+        out = std::numeric_limits<double>::infinity();
+        return true;
+    }
+
+    if (s == "-inf" || s == "-inff") {
+        out = -std::numeric_limits<double>::infinity();
+        return true;
+    }
+    return false;
+}
+
 // si input est un single nonnumeric charliteral
 static bool isCharLiteral(const std::string &s) {
     return (s.size() == 1 && !std::isdigit(static_cast<unsigned char>(s[0])));
@@ -50,7 +68,7 @@ static void printChar(double v) {
     }
     char c = static_cast<char>(v);
     if (!std::isprint(static_cast<unsigned char>(c))) {
-        std::cout << "Not displayable\n";
+        std::cout << "Non displayable\n";
         return;
     }
     std::cout << "'" << c << "'" << "\n";
@@ -77,16 +95,21 @@ static void printFloat(double v) {
             std::cout << "-inff\n";
         else
             std::cout << "+inff\n";
+        return;
     }
 
-    float f = static_cast<float>(v);
+    if (std::fabs(v) > std::numeric_limits<float>::max()) {
+        std::cout << "impossible\n";
+        return;
+    }
 
-    if (isIntegralDouble(v))
-        std::cout << std::fixed << std::setprecision(1);
-    else
-        std::cout << std::fixed << std::setprecision(6);
-    
-    std::cout << f << "f\n";
+    if (isIntegralDouble(v) && v >= INT_MIN && v <= INT_MAX) {
+        std::cout << std::fixed << std::setprecision(1) << v << "f\n";
+    }
+    else {
+        float f = static_cast<float>(v);
+        std::cout << std::setprecision(7) << f << "f\n";
+    }
 
     std::cout.unsetf(std::ios::floatfield);
     std::cout << std::setprecision(6);
@@ -109,7 +132,7 @@ static void printDouble(double v) {
     if (isIntegralDouble(v))
         std::cout << std::fixed << std::setprecision(1);
     else
-        std::cout << std::fixed << std::setprecision(6);
+        std::cout << std::setprecision(15);
 
     std::cout << v << "\n";
 
@@ -148,7 +171,7 @@ void ScalarConverter::convert(const std::string &literal) {
 
     // pseudo-literals
     if (isPseudo(literal)) {
-        if (!parseDouble(literal, value)) {
+        if (!parsePseudo(literal, value)) {
             std::cout << "char: impossible\n";
             std::cout << "int: impossible\n";
             std::cout << "float: impossible\n";

@@ -6,7 +6,7 @@
 # include <iomanip>
 # include <cstdlib>
 # include <cerrno>
-# include <climits>
+# include <limits>
 # include <cctype>
 # include <cmath>
 
