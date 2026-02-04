@@ -49,4 +49,3 @@ void identify(Base& p) {
 
      std::cout << "Unknown\n";
 }
-

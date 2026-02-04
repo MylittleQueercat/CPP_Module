@@ -1,4 +1,4 @@
-NAME = ex02
+NAME = Base
 
 SRC = main.cpp Base.cpp identify.cpp
 OBJ = $(SRC:.cpp=.o)

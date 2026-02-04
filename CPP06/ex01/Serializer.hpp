@@ -1,7 +1,6 @@
 #ifndef SERIALIZER_HPP
 # define SERIALIZER_HPP
 
-# include <cstddef>
 # include <stdint.h>
 # include <iostream>
 # include "Data.hpp"
@@ -14,10 +13,11 @@ class Serializer {
         ~Serializer();
 
     public:
-        static uintptr_t serializer(Data *ptr);
-        static Data* deserializer(uintptr_t raw);
+        static uintptr_t serialize(Data *ptr);
+        static Data* deserialize(uintptr_t raw);
 };
 
 #endif
 
+// classe serializer peut pas instancier
 // uintptr_t : pouvoir contenir une adresse memoire sans perte d'information

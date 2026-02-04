@@ -8,8 +8,8 @@ int main() {
 
     Data *original = &data;
 
-    uintptr_t raw = Serializer::serializer(original);
-    Data *back = Serializer::deserializer(raw);
+    uintptr_t raw = Serializer::serialize(original);
+    Data *back = Serializer::deserialize(raw);
 
     std::cout << "original ptr: " << original << "\n";
     std::cout << "raw value: " << raw << "\n";
