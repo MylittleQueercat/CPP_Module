@@ -1,7 +1,6 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
-# include <iostream>
 # include <exception>
 
 template <typename T>
@@ -17,7 +16,7 @@ class Array {
 		if( n == 0)
 			_data = NULL;
 		else
-			_data = new T[n]();
+			_data = new T[_size]();
 	}
 
 	Array(const Array& other) : _data(NULL), _size(0) {
@@ -32,7 +31,7 @@ class Array {
 			if (_size == 0)
 				_data = NULL;
 			else {
-				_data = new T[_size];
+				_data = new T[_size]();
 				for (unsigned int i = 0; i < _size; i++)
 					_data[i] = other._data[i];
 			}
