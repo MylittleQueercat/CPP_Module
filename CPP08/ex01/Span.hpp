@@ -4,7 +4,9 @@
 # include <vector>
 # include <algorithm>
 # include <exception>
+# include <stdexcept>
 # include <iostream>
+# include <iterator>
 
 class Span {
 	private:  
@@ -27,8 +29,8 @@ class Span {
 			_v.insert(_v.end(), begin, end);
 		}
 
-		int	shortestSpan();
-		int longestSpan();
+		long long shortestSpan() const;
+		long long longestSpan() const;
 
 		class FullException : public std::exception {
 			public: virtual const char* what() const throw() {

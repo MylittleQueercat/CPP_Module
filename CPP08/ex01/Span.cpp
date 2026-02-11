@@ -22,25 +22,25 @@ void Span::addNumber(int n) {
 	_v.push_back(n);
 }
 
-int	Span::longestSpan() {
+long long Span::longestSpan() const {
 	if (_v.size() < 2)
 		throw NoSpanException();
 	
 	int	min = *std::min_element(_v.begin(), _v.end());
 	int max = *std::max_element(_v.begin(), _v.end());
-	return max - min;
+	return static_cast<long long>(max) - static_cast<long long>(min);
 }
 
-int Span::shortestSpan() {
+long long Span::shortestSpan() const {
 	if (_v.size() < 2)
 		throw NoSpanException();
 
 	std::vector<int> sorted = _v;
 	std::sort(sorted.begin(), sorted.end());
 
-	int minSpan = sorted[1] - sorted[0];
+	long long minSpan = static_cast<long long>(sorted[1]) - static_cast<long long>(sorted[0]);
 	for (size_t i = 1; i < sorted.size() - 1; ++i) {
-		int span = sorted[i + 1] - sorted[i];
+		long long span = static_cast<long long>(sorted[i + 1]) - static_cast<long long>(sorted[i]);
 		if (span < minSpan)
 			minSpan = span;
 	}

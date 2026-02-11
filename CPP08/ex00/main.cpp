@@ -2,6 +2,7 @@
 #include <vector>
 #include <list>
 #include <deque>
+#include <iostream>
 
 int main() {
 	//Case vector
