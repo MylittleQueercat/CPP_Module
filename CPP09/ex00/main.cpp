@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hguo <hguo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: leticiabi <leticiabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 16:30:03 by hguo              #+#    #+#             */
-/*   Updated: 2026/02/11 16:30:04 by hguo             ###   ########.fr       */
+/*   Updated: 2026/03/07 07:58:18 by leticiabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
 	}
 
 	BitcoinExchange btc;
-	if (btc.loadDatabase("data.csv")) {
+	if (!btc.loadDatabase("data.csv")) {
 		std::cerr << "Error: database file missing." << std::endl;
 		return 1;
 	}

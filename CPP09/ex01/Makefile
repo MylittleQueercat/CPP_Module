@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hguo <hguo@student.42.fr>                  +#+  +:+       +#+         #
+#    By: leticiabi <leticiabi@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/11 16:33:23 by hguo              #+#    #+#              #
-#    Updated: 2026/02/11 16:33:24 by hguo             ###   ########.fr        #
+#    Updated: 2026/02/23 15:38:01 by leticiabi        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+NAME = RPN
 
-SRC = main.cpp
+SRC = main.cpp RPN.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CXX = c++

@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hguo <hguo@student.42.fr>                  +#+  +:+       +#+         #
+#    By: leticiabi <leticiabi@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/11 16:33:26 by hguo              #+#    #+#              #
-#    Updated: 2026/02/11 16:33:27 by hguo             ###   ########.fr        #
+#    Updated: 2026/02/25 13:48:50 by leticiabi        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+NAME = PmergeMe
 
-SRC = main.cpp
+SRC = main.cpp PmergeMe.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CXX = c++
