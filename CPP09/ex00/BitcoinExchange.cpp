@@ -6,7 +6,7 @@
 /*   By: leticiabi <leticiabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 16:29:52 by hguo              #+#    #+#             */
-/*   Updated: 2026/03/07 08:47:34 by leticiabi        ###   ########.fr       */
+/*   Updated: 2026/03/20 08:33:59 by leticiabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,24 @@ void    BitcoinExchange::processInput(const std::string& filename) {
     }
 
     std::string line;
-    std::getline(file, line);
+    if (!std::getline(file, line)) {
+        std::cerr << "Error: invalid file." << std::endl;
+        return;
+    }
+
+    std::string headerCheck = line;
+    trim(headerCheck);
+    if (headerCheck != "date | value") {
+        std::cerr << "Error: invalid file." << std::endl;
+        return;
+    }
+    
+    // Pour verifier si apres la premiere ligne est vide ou pas
+    if (file.peek() == EOF) {
+        std::cerr << "Error: invalid file." << std::endl;
+        return;
+    }
+
     while (std::getline(file, line)) {
         if (line.empty())
             continue ;

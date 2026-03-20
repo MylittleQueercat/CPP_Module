@@ -9,6 +9,7 @@
 # include <algorithm>
 # include <iomanip>
 # include <sstream>
+# include <climits>
 
 class PmergeMe {
 	private:  
@@ -25,9 +26,6 @@ class PmergeMe {
 
 		template <typename T>
 		void fordJohnsonSort(T& container);
-
-		template <typename T>
-		void insertionSort(T& mainChain, T& pending);
 };
 
 #endif

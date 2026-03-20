@@ -54,10 +54,10 @@ void RPN::calculate(const std::string& expression) {
 				}
 				_stack.push(a / b);
 			}
-			else {
-				std::cerr << "Error" << std::endl;
-				return;
-			}
+		}
+		else {
+			std::cerr << "Error" << std::endl;
+			return;
 		}
 	}
 

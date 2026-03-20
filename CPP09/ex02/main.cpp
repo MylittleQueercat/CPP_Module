@@ -2,13 +2,14 @@
 
 void PmergeMe::run(int ac, char** av) {
 	for (int i = 1; i < ac; ++i) {
-		int val = std::atoi(av[i]);
-		if (val < 0) {
+		char *endPtr;
+		long val = std::strtol(av[i], &endPtr, 10);
+		if (val < 0 || *endPtr != '\0' || val > INT_MAX) {
 			std::cerr << "Error" << std::endl;
 			return;
 		}
-		_vec.push_back(val);
-		_deq.push_back(val);
+		_vec.push_back(static_cast<int>(val));
+		_deq.push_back(static_cast<int>(val));
 	}
 
 	std::cout << "Before: ";
