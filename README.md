@@ -1,4 +1,8 @@
-# 🔷 C++ Modules 00–09 — 42 Project | 100/100
+# 🔷 C++ Modules 00–09
+
+![Score](https://img.shields.io/badge/Score-100%2F100-brightgreen)
+![Language](https://img.shields.io/badge/Language-C%2B%2B-pink)
+![42](https://img.shields.io/badge/42-Project-black)
 
 ## Module 00 — Namespaces, Classes, Member Functions, stdio streams
 
